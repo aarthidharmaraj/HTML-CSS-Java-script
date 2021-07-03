@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<style>
+			#div1 {
+				width :350px;
+				height: 150px;
+				padding: 10px;
+				border:5px solid black;
+				background:#ADD8E6;
+			{
+		</style>
+		<script>
+			function allowDrop(eve){
+				eve.preventDefault();
+			}
+			function drag(eve){
+				eve.dataTransfer.setData("HTML5",eve.target.id);
+			}
+			function drop(eve){
+				var id=eve.dataTransfer.getData("HTML5");
+				eve.target.appendChild(document.getElementById(id));
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"> </div> <br>
+		<img id="html5logo" src="E:\HTML working files\HTML5logo2.png" alt="image not available" draggable="true"
+		ondragstart="drag(event)" width="150" height="150">
+	</body>
+</html>	
